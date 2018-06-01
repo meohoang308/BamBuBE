@@ -18,8 +18,8 @@ public class User implements Serializable {
     private String profile;
 	@Column(name="score")
     private int score;
-	@Column(name = "registered_date", nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "registered_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 	public int getUser_id() {
 		return user_id;
